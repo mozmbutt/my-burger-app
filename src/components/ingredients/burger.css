@@ -1,0 +1,6 @@
+.burger {
+    height: 350px;
+    padding: 50px;
+    overflow: overlay;
+    text-align: -webkit-center;
+}
