@@ -1,0 +1,39 @@
+.upper-bun {
+	width: 500px;
+	border-top: 130px solid #f5b230;
+	border-radius: 50% 50% 0% 0%;
+}
+
+.lower-bun {
+	width: 500px;
+	border-bottom: 70px solid #f5b230;
+	border-radius: 0% 0% 30% 30%;
+}
+
+.lettuce {
+	width: 550px;
+	border-top: 30px solid #91ce50;
+	border-radius: 15px 15px 15px 15px;
+	margin: 4px
+}
+
+.meat {
+	width: 550px;
+	border-top: 30px solid #743005;
+	border-radius: 15px 15px 15px 15px;
+	margin: 4px
+}
+
+.cheese {
+	width: 600px;
+	border-top: 20px solid #eac90d;
+	border-radius: 15px 15px 15px 15px;
+	margin: 4px
+}
+
+.bacon {
+	width: 500px;
+	border-top: 15px solid #c25630;
+	border-radius: 5% 5% 5% 5%;
+	margin: 4px
+}

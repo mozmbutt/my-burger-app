@@ -1,35 +1,32 @@
 import React from "react"
-import Bacon from "./bacon/Bacon"
-import Cheese from "./cheese/Cheese"
-import Lettuce from "./lettuce/Lettuce"
-import LowerBun from "./lowerBun/LowerBun"
-import Meat from "./meat/Meat"
-import UpperBun from "./upperBun/UpperBun"
 import './burger.css'
+import Ingredient from "./ingredient/Ingredient"
 
-function Burger({ ingredients }) {
-    let lettusComponent = [...Array(ingredients.lettuceCount)].map((e, i) => <Lettuce key={i} />)
-    let baconComponent = [...Array(ingredients.baconCount)].map((e, i) => <Bacon key={i} />)
-    let cheeseComponent = [...Array(ingredients.cheeseCount)].map((e, i) => <Cheese key={i} />)
-    let meatComponent = [...Array(ingredients.meatCount)].map((e, i) => <Meat key={i} />)
+function Burger({ state }) {
+	const ingredients = state.ingredients
 
-    return (
-        <div className="burger">
-            <UpperBun />
-            {lettusComponent}
-            {baconComponent}
-            {cheeseComponent}
-            {meatComponent}
-            {
-                !ingredients.lettuceCount > 0 && !ingredients.baconCount && !ingredients.cheeseCount && !ingredients.meatCount &&
-                <h1>
-                    No Ingredients Added
-                </h1>
-            }
+	const ingredient = (item) => {
+		return [...Array(item.count)].map((e, i) => <Ingredient key={i} type={item.type} />)
+	}
 
-            <LowerBun />
-        </div>
-    )
+	let ingredientComponent = Object.values(ingredients).map(function (item, index) {
+		return ingredient(item)
+	});
+
+	return (
+		<div className="burger">
+			<Ingredient type="upper-bun" />
+			{ingredientComponent}
+			{
+				!ingredients.lettuce.count > 0 && !ingredients.bacon.count && !ingredients.cheese.count && !ingredients.meat.count &&
+				<h1>
+					No Ingredients Added
+				</h1>
+			}
+			<Ingredient type="lower-bun" />
+
+		</div>
+	)
 }
 
 export default Burger

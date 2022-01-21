@@ -3,38 +3,39 @@ import Controller from "./ingredient-control/Controller"
 import './build-control.css'
 
 function BuildControls({ state, dispatch }) {
+    const ingredients = state.ingredients
     return (
         <div className="section-controls">
             <h4>
-                Current Price: {state?.price} $
+                Current Price: {state.price} $
             </h4>
             <Controller
                 name="Lettuce"
-                price="10"
+                price={ingredients.lettuce.price}
                 increamentItem={() => dispatch('ADD_LETTUCE')}
                 decreamentItem={() => dispatch('REMOVE_LETTUCE')}
-                itemCount={state.lettuceCount}
+                itemCount={ingredients.lettuce.count}
             />
             <Controller
                 name="Bacon"
-                price="20"
+                price={ingredients.bacon.price}
                 increamentItem={() => dispatch('ADD_BACON')}
                 decreamentItem={() => dispatch('REMOVE_BACON')}
-                itemCount={state.baconCount}
+                itemCount={ingredients.bacon.count}
             />
             <Controller
                 name="Cheese"
-                price="5"
+                price={ingredients.cheese.price}
                 increamentItem={() => dispatch('ADD_CHEESE')}
                 decreamentItem={() => dispatch('REMOVE_CHEESE')}
-                itemCount={state.cheeseCount}
+                itemCount={ingredients.cheese.count}
             />
             <Controller
                 name="Meat"
-                price="25"
+                price={ingredients.meat.price}
                 increamentItem={() => dispatch('ADD_MEAT')}
                 decreamentItem={() => dispatch('REMOVE_MEAT')}
-                itemCount={state.meatCount}
+                itemCount={ingredients.meat.count}
             />
         </div>
     )
