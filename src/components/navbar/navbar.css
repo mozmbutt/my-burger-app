@@ -10,6 +10,7 @@
     color: #fff;
     text-decoration: none;
     font-size: 17px;
+    cursor: pointer;
 }
 
 .navbar a:hover {
